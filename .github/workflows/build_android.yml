@@ -1,14 +1,6 @@
-name: Build All
+name: Build Android
 
 on: [push]
-
-env:
-  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
-  BUILD_TYPE: Release
-  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-permissions:
-  contents: write
 
 jobs:
   build_android:
@@ -59,12 +51,3 @@ jobs:
         with:
           name: SatDump-debug.apk
           path: ${{runner.workspace}}/SatDump/android/app/build/outputs/apk/debug/app-debug.apk
-
-      - name: Install zip
-        run: sudo apt install -y unzip
-
-      - name: Copy files
-        run: mkdir satdump_out && cp SatDump-debug.apk/app-debug.apk satdump_out/SatDump-debug.apk
-
-      - name: Update Nightly
-        run: gh release upload nightly satdump_out/* -R ${{github.repository}} --clobber
