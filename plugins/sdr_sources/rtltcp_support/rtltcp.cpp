@@ -69,17 +69,15 @@ void RTLTCPSource::open()
 
     // Set available samplerate
     std::vector<double> available_samplerates;
-    available_samplerates.push_back(250000);
-    available_samplerates.push_back(1024000);
-    available_samplerates.push_back(1536000);
-    available_samplerates.push_back(1792000);
-    available_samplerates.push_back(1920000);
-    available_samplerates.push_back(2048000);
-    available_samplerates.push_back(2160000);
-    available_samplerates.push_back(2400000);
-    available_samplerates.push_back(2560000);
-    available_samplerates.push_back(2880000);
-    available_samplerates.push_back(3200000);
+    available_samplerates.push_back(2000000);
+    available_samplerates.push_back(3000000);
+    available_samplerates.push_back(4000000);
+    available_samplerates.push_back(5000000);
+    available_samplerates.push_back(6000000);
+    available_samplerates.push_back(7000000);
+    available_samplerates.push_back(8000000);
+    available_samplerates.push_back(9000000);
+    available_samplerates.push_back(10000000);
 
     samplerate_widget.set_list(available_samplerates, true);
 }
